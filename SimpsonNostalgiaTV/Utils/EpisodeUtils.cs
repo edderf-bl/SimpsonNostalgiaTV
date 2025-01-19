@@ -22,8 +22,7 @@ namespace SimpsonNostalgiaTV.Utils
 
                 //EpisodePath
                 var episodePath = episodes[season][episode];
-                episodePath = Regex.Replace(episodePath, "[A-z0-0\\:]+wwwroot\\\\", "../"); //Remove absolute path
-                episodePath = Regex.Replace(episodePath, "\\\\", "/"); //Remplace \\ to /
+                episodePath = Regex.Match(episodePath, @"storage[A-z0-9\/%. ]+").Value; // Get relative path
 
                 //Get FileName
                 FileInfo fileInfo = new FileInfo(episodePath);
