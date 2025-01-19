@@ -10,7 +10,7 @@
 
         public static List<List<string>> GetEpisodesPaths(List<string> seasonsDirectories)
         {
-            return seasonsDirectories.Select(x => Directory.GetFiles(x).ToList()).ToList();
+            return seasonsDirectories.Select(x => Directory.GetFiles(x).Order().ToList()).ToList();
         }
     }
 }
