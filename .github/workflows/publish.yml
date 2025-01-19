@@ -20,8 +20,8 @@ jobs:
 
            - name: Build Page
              run: |
-                  docker build ./SimpsonNostalgiaTV --tag ghcr.io/kfernandol/simpson-nostalgiatv:latest
-                  docker push ghcr.io/kfernandol/simpson-nostalgiatv:latest
+                  docker build ./SimpsonNostalgiaTV --tag ghcr.io/edderf-bl/simpson-nostalgiatv:latest
+                  docker push ghcr.io/edderf-bl/simpson-nostalgiatv:latest
     deploy:
         needs: create-docker-image
         runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
               run: |
                    sshpass -p ${{ secrets.AUTH_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.AUTH_SERVER }} << EOF
                    cd /home/docker/simpson-nostalgiatv
-                   docker login ghcr.io -u kfernandol -p ${{ secrets.TOKEN_DEPLOY }}
-                   docker pull ghcr.io/kfernandol/simpson-nostalgiatv:latest
+                   docker login ghcr.io -u edderf-bl -p ${{ secrets.TOKEN_DEPLOY }}
+                   docker pull ghcr.io/edderf-bl/simpson-nostalgiatv:latest
                    docker-compose down
                    docker-compose up -d
