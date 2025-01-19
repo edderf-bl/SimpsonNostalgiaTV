@@ -31,10 +31,8 @@ jobs:
 
             - name: Deploy VPS
               run: |
-                   DOCKER_ROOT="${HOME:-c:}"
-
                    sshpass -p ${{ secrets.AUTH_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.AUTH_SERVER }} << EOF
-                   cd $DOCKER_ROOT/docker/nostalgiatv
+                   cd ~/docker/nostalgiatv
                    docker login ghcr.io -u edderf-bl -p ${{ secrets.TOKEN_DEPLOY }}
                    docker pull ghcr.io/edderf-bl/simpson-nostalgiatv:latest
                    docker-compose down
