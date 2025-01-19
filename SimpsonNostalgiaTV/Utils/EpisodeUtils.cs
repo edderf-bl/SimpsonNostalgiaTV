@@ -17,7 +17,7 @@ namespace SimpsonNostalgiaTV.Utils
                 List<List<string>> episodes = DirectoryUtils.GetEpisodesPaths(seasonsPath);
 
                 //Get season and episode random
-                int season = rnd.Next(episodes.Count);
+                int season = rnd.Next(seasonsPath.Count);
                 int episode = rnd.Next(episodes[season].Count);
 
                 //EpisodePath
@@ -35,8 +35,8 @@ namespace SimpsonNostalgiaTV.Utils
                 TimeSpan duration = file.Properties.Duration;
 
                 //Get episode data
-                response.Season = season++;
-                response.EpisodeNum = episode;
+                response.Season = ++season;
+                response.EpisodeNum = ++episode;
                 response.Path = episodePath;
                 response.Title = fileName;
                 response.Duration = duration;
