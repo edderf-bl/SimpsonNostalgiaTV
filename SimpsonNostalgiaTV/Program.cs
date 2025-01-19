@@ -6,7 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(e =>
+{
+    e.EnableDetailedErrors = true;
+    e.MaximumReceiveMessageSize = long.MaxValue;
+});
 
 //configurations
 builder.Services.Configure<SerieConfiguration>(builder.Configuration.GetSection("Serie"));
