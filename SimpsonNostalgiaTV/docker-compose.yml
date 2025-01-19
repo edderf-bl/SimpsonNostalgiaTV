@@ -1,0 +1,10 @@
+version: '3'
+services:
+    web:
+        image: ghcr.io/kfernandol/simpson-nostalgiatv:latest
+        ports:
+            - "28000:8080"
+            - "28001:8081"
+        restart: unless-stopped
+        volumes:
+            - ${HOME:-c:}/docker/nostalgiatv/storage/simpson:/src/SimpsonNostalgiaTV/wwwroot/storage

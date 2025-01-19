@@ -9,7 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include=".github\workflows\publish.yml" />
+    <Compile Remove=".github\**" />
+    <Content Remove=".github\**" />
+    <EmbeddedResource Remove=".github\**" />
+    <None Remove=".github\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\storage\simpson\season 1\1x01 Especial de navidad.mp4">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
