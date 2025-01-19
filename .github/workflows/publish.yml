@@ -29,6 +29,11 @@ jobs:
             - name: Install SSH
               run: sudo apt install -y sshpass
               
+            - name: Copy docker-compose to VPS
+              run: |
+                   DOCKER_ROOT="${HOME:-c:}"
+                   sshpass -p ${{ secrets.AUTH_PASS }} scp ./docker-compose.yml ${{ secrets.AUTH_SERVER }}:${DOCKER_ROOT}/docker/nostalgiatv
+
             - name: Deploy VPS
               run: |
                    sshpass -p ${{ secrets.AUTH_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.AUTH_SERVER }} << EOF
