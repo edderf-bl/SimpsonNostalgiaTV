@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="overflow-hidden">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SimpsonNostalgiaTV</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/video.js/dist/video-js.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SimpsonNostalgiaTV.styles.css" asp-append-version="true" />
+</head>
+<body class="mb-0">
+    <div class="container mx-0 px-0">
+        <main role="main" class="vw-100" style="min-height: 100vh; background: url('/assets/images/background.webp') no-repeat fixed center; background-size: cover">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

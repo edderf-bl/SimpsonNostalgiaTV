@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="container min-vh-100">
+    <div class="row align-items-end justify-content-center min-vh-100">
+        <div class="col-12 col-md-6 col-lg-5 mb-3">
+            <div class="row mb-1">
+                <div class="col-6">
+                    <button id="btnFullscreen" class="w-100 btn btn-warning border-3 border-dark">Fullscreen</button>
+                </div>
+                <div class="col-3">
+                    <button id="btnVolumeDown" class="w-100 btn btn-warning border-3 border-dark">Vol -</button>
+                </div>
+                <div class="col-3">
+                    <button id="btnVolumeUp" class="w-100 btn btn-warning border-3 border-dark">Vol +</button>
+                </div>
+            </div>
+            <video id="video"
+                   class="video-js w-100"
+                   autoplay
+                   muted
+                   preload="auto"
+                   data-setup='{
+                     "autoplay": true,
+                     "muted": true,
+                     "preload": "auto"
+                   }'>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                </p>
+            </video>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/video.js/dist/video.min.js"></script>
+    <script src="~/lib/videojs-playlist/dist/videojs-playlist.min.js"></script>
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/assets/js/Home/Home.js"></script>
+}
