@@ -32,7 +32,11 @@ jobs:
             - name: Copy docker-compose to VPS
               run: |
                    DOCKER_ROOT="${HOME:-c:}"
-                   sshpass -p ${{ secrets.AUTH_PASS }} scp ./docker-compose.yml ${{ secrets.AUTH_SERVER }}:${DOCKER_ROOT}/docker/nostalgiatv
+                   if ! sshpass -p ${{ secrets.AUTH_PASS }} ssh ${{ secrets.AUTH_SERVER }} "test -f ${DOCKER_ROOT}/docker/nostalgiatv/docker-compose.yml"; then
+                        sshpass -p ${{ secrets.AUTH_PASS }} scp $GITHUB_WORKSPACE/docker-compose.yml ${{ secrets.AUTH_SERVER }}:${DOCKER_ROOT}/docker/nostalgiatv/
+                   else
+                        echo "The file docker-compose.yml already exists on the server"
+                   fi
 
             - name: Deploy VPS
               run: |
