@@ -85,6 +85,7 @@ player.on('ended', function () {
 });
 
 btnFullscreen.onclick = function () {
+	player.muted(false);
 	player.requestFullscreen();
 }
 
