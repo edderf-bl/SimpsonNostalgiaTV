@@ -13,7 +13,6 @@ let syncInterval;
 connection.on("ReceiveEpisode", function (episode) {
 	episodeData = JSON.parse(episode);
 	episodeData.DatePlay = new Date(episodeData.DatePlay);
-	console.log(episodeData)
 
 	var myplaylist = [
 		{
@@ -47,7 +46,6 @@ function seekToCurrentPosition() {
 
 	const videoDuration = player.duration();
 
-	console.log(videoDuration)
 	if (secondsElapsed < videoDuration)
 		player.currentTime(secondsElapsed);
 	else if (!isNaN(videoDuration)) {
