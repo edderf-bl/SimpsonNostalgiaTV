@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include=".github\workflows\publish.yml" />
     <None Include="wwwroot\storage\simpson\season 1\1x01 Especial de navidad.mp4">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
