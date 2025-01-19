@@ -25,6 +25,12 @@ connection.on("ReceiveEpisode", function (episode) {
 	];
 
 	player.playlist(myplaylist);
+
+	try {
+		player.play();
+	} catch (error) {
+		console.error(error);
+	}
 });
 
 connection.start().then(function () {
