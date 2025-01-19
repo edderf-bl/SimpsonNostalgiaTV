@@ -35,7 +35,7 @@ namespace SimpsonNostalgiaTV.Utils
                 TimeSpan duration = file.Properties.Duration;
 
                 //Get episode data
-                response.Season = season;
+                response.Season = season++;
                 response.EpisodeNum = episode;
                 response.Path = episodePath;
                 response.Title = fileName;
