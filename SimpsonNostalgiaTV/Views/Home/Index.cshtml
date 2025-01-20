@@ -19,12 +19,8 @@
             </div>
             <video id="video"
                    class="video-js w-100"
-                   autoplay
-                   muted
                    preload="auto"
                    data-setup='{
-                     "autoplay": true,
-                     "muted": true,
                      "preload": "auto"
                    }'>
                 <p class="vjs-no-js">
@@ -32,6 +28,37 @@
                     web browser that
                 </p>
             </video>
+        </div>
+    </div>
+</div>
+
+<div class="modal d-flex" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content bg-black" style="background: url('/assets/images/background-loading-black-2.jpg') no-repeat fixed center; background-size: 110%">
+            <div class="modal-body">
+                <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+                    <h1 class="d-none">Nostalgia TV</h1>
+                    <!--NostalgiaTV Logo-->
+                    <div class="row w-100 justify-content-center">
+                        <div class="col-6">
+                            <img class="w-100" src="~/assets/images/NOSTALGIA-TV-LOGO.png" style=" filter: drop-shadow(5px 5px 5px #222); " />
+                        </div>
+                    </div>
+                    <!--Buttons Pages-->
+                    <div class="row w-100 justify-content-center  mb-5 pb-5">
+                        <div class="col-1">
+                            <button id="btnSimpson" class="btn btn-dark btn-serie">
+                                <img class="w-100 h-100" src="~/assets/images/logos/simpson.png" style="object-fit: contain;" />
+                            </button>
+                        </div>
+                        <div class="col-1">
+                            <button id="btnCartoonNetwork" class="btn btn-dark btn-serie">
+                                <img class="w-100 h-100" src="~/assets/images/logos/cartoon-network.webp" style="object-fit: contain;" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
